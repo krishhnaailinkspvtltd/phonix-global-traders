@@ -118,7 +118,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-[100vh] min-h-[680px] flex flex-col justify-between overflow-hidden select-none bg-[#082653]"
+      className="home-fullscreen-hero relative w-full h-[100vh] min-h-[680px] flex flex-col justify-between overflow-hidden select-none bg-[#082653]"
     >
       {/* Background Fullscreen Maritime Carrier Photography */}
       <div className="absolute inset-0 z-0 overflow-hidden">
