@@ -17,7 +17,7 @@ const SHOWCASE_PRODUCTS: ShowcaseProduct[] = [
     title: 'Dehydrated Vegetables',
     subhead: 'White & Red Onion Flakes, Garlic Granules & Powders',
     image: '/images/products/dehydrated-onion.jpg',
-    link: '/products?cat=dehydrated-agro',
+    link: '/products?category=dehydrated-agro',
   },
   {
     id: 'indian-spices',
@@ -52,14 +52,14 @@ const SHOWCASE_PRODUCTS: ShowcaseProduct[] = [
     title: 'Tropical Fruit Powders',
     subhead: 'Spray-Dried Alphonsa Mango, Guava & Banana',
     image: '/images/products/spray-mango.jpg',
-    link: '/products?cat=dehydrated-agro',
+    link: '/products?category=dehydrated-agro',
   },
   {
     id: 'global-imports',
     title: 'Global Imports',
     subhead: 'California In-Shell Almonds & African Raw Cashews',
     image: '/images/products/california-almonds.jpg',
-    link: '/products?cat=global-imports',
+    link: '/products?category=global-imports',
   },
 ]
 
