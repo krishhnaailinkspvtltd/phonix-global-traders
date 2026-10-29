@@ -72,7 +72,7 @@ export const ContactPage: React.FC = () => {
   }
 
   return (
-    <div className="pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
+    <div className="site-inner-page pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Architectural Section Header */}
