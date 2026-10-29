@@ -43,15 +43,15 @@ export const ContactPage: React.FC = () => {
 
   const validate = () => {
     const newErrors: { [k: string]: string } = {}
-    if (!formData.fullName.trim()) newErrors.fullName = 'Full legal representative name is required.'
+    if (!formData.fullName.trim()) newErrors.fullName = 'Please enter your name.'
     if (!formData.corporateEmail.trim()) {
       newErrors.corporateEmail = 'Corporate business email is required.'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.corporateEmail)) {
       newErrors.corporateEmail = 'Please provide a valid corporate email format.'
     }
-    if (!formData.companyName.trim()) newErrors.companyName = 'Registered commercial entity name is required.'
-    if (!formData.destinationPort.trim()) newErrors.destinationPort = 'Discharge port and draft constraints required.'
-    if (!formData.message.trim()) newErrors.message = 'Please specify cargo technical criteria & banking terms.'
+    if (!formData.companyName.trim()) newErrors.companyName = 'Please enter your company name.'
+    if (!formData.destinationPort.trim()) newErrors.destinationPort = 'Please specify the destination or delivery location.'
+    if (!formData.message.trim()) newErrors.message = 'Please describe the product, quantity and destination you're interested in.'
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -81,7 +81,7 @@ export const ContactPage: React.FC = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <span className="font-mono text-[11px] tracking-[0.25em] text-accent font-semibold uppercase">
-                  SECTION 06 // COMMERCIAL ENGAGEMENT & DESKS
+                  CONTACT // BUSINESS INQUIRIES
                 </span>
                 <span className="h-px w-10 bg-accent/40" />
                 <span className="font-mono text-[11px] text-secondary-text">
@@ -91,7 +91,7 @@ export const ContactPage: React.FC = () => {
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-sans font-black tracking-tight leading-[0.95]">
                 INITIATE A{' '}
                 <span className="font-serif italic font-normal text-accent block sm:inline">
-                  Commercial Requisition.
+                  Conversation.
                 </span>
               </h1>
             </div>
@@ -108,7 +108,7 @@ export const ContactPage: React.FC = () => {
               <span className="font-bold tracking-wider uppercase">COMMERCIAL DEMONSTRATION ENVIRONMENT</span>
             </div>
             <span className="text-secondary-text text-[11px]">
-              Form submissions generate an authenticated simulated broker dossier.
+              This is a website demonstration. The form does not send inquiries to a real inbox.
             </span>
           </div>
         </div>
@@ -290,14 +290,14 @@ export const ContactPage: React.FC = () => {
               {/* Row 5: Specification details */}
               <div className="space-y-1.5">
                 <label className="font-mono text-xs text-secondary-text uppercase tracking-wider block">
-                  Procurement Specifications &amp; Banking Parameters *
+                  Product Requirements &amp; Message *
                 </label>
                 <textarea
                   name="message"
                   rows={4}
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Detail target chemical assay tolerances, preferred inspection body (SGS / BV / Intertek), issuing bank jurisdiction, and shipment delivery window..."
+                  placeholder="Tell us about your product, approximate quantity, required packaging and delivery destination..."
                   className={`w-full px-4 py-3 border bg-canvas text-primary-text font-sans text-sm focus:outline-none focus:border-accent transition-colors resize-none ${
                     errors.message ? 'border-red-500' : 'border-border-strong'
                   }`}
@@ -316,11 +316,11 @@ export const ContactPage: React.FC = () => {
                 {isSubmitting ? (
                   <>
                     <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent animate-spin" />
-                    <span>ENCRYPTING &amp; DISPATCHING DOSSIER...</span>
+                    <span>PREPARING DEMO PREVIEW...</span>
                   </>
                 ) : (
                   <>
-                    <span>TRANSMIT COMMERCIAL DOSSIER</span>
+                    <span>PREVIEW DEMO INQUIRY</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </>
                 )}
@@ -415,7 +415,7 @@ export const ContactPage: React.FC = () => {
                       COMMERCIAL ACKNOWLEDGMENT
                     </span>
                     <h3 className="text-lg font-sans font-bold text-primary-text">
-                      Requisition Dossier Registered
+                      Demo Inquiry Preview Created
                     </h3>
                   </div>
                 </div>
@@ -426,7 +426,7 @@ export const ContactPage: React.FC = () => {
 
               <div className="space-y-3 font-sans text-xs text-secondary-text leading-relaxed">
                 <p>
-                  Thank you, <strong className="text-primary-text">{formData.fullName}</strong>. Your commercial requisition for <strong className="text-primary-text">{formData.companyName}</strong> has been logged into the Phonix Global Trade demonstration desk.
+                  Thank you, <strong className="text-primary-text">{formData.fullName}</strong>. Your demonstration inquiry for <strong className="text-primary-text">{formData.companyName}</strong> is shown here as a preview only and has not been sent to Phonix Global Trade.
                 </p>
                 <div className="p-3 border border-border-subtle bg-canvas font-mono text-[11px] space-y-1">
                   <div><span className="text-secondary-text">DESTINATION PORT:</span> <span className="text-primary-text font-bold">{formData.destinationPort}</span></div>
