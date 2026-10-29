@@ -45,7 +45,7 @@ export const GalleryPage: React.FC = () => {
   const currentPhoto = selectedPhotoIndex !== null ? GALLERY_ITEMS[selectedPhotoIndex] : null
 
   return (
-    <div className="pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
+    <div className="site-inner-page pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Editorial Section Header */}
