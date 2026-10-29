@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react'
 
 export const ProductsPage: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
-  const initialCat = searchParams.get('category') || 'all'
+  const initialCat = searchParams.get('category') || searchParams.get('cat') || 'all'
   const [selectedCategory, setSelectedCategory] = useState<string>(initialCat)
 
   useEffect(() => {
@@ -15,8 +15,8 @@ export const ProductsPage: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    const cat = searchParams.get('category')
-    if (cat) setSelectedCategory(cat)
+    const cat = searchParams.get('category') || searchParams.get('cat') || 'all'
+    setSelectedCategory(cat)
   }, [searchParams])
 
   const handleFilterChange = (catId: string) => {
@@ -34,7 +34,7 @@ export const ProductsPage: React.FC = () => {
       : PRODUCTS_CATALOG.filter((p) => p.categoryId === selectedCategory)
 
   return (
-    <div className="pt-28 sm:pt-32 pb-20 text-primary-text select-none overflow-x-hidden">
+    <div className="site-inner-page pt-28 sm:pt-32 pb-20 text-primary-text select-none overflow-x-hidden">
       
       {/* Editorial Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
