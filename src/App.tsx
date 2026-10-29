@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import './styles/premium-responsive.css'
+import { RouteMotion } from '@/components/common/RouteMotion'
 import './mobile-site-navigation.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ThemeProvider } from '@/context/ThemeContext'
@@ -65,6 +67,7 @@ export default function App() {
         <BrowserRouter>
           {/* Subtle desktop follower cursor */}
           <CustomCursor />
+          <RouteMotion />
 
           {/* Cinematic Opening Loading Screen */}
           {!hasLoaded && <LoadingScreen onComplete={handleComplete} />}
