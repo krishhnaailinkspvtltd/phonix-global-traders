@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-slate-600 font-sans text-sm sm:text-base leading-relaxed">
-              Premier Indian export and international import house. Exporting certified dehydrated agro, authentic spices, aged Basmati, and manufactured goods worldwide through Mundra and JNPT deepwater terminals.
+              Exploring international opportunities for Indian dehydrated produce, spices, grains and manufactured goods, alongside global sourcing into India.
             </p>
           </div>
 
@@ -134,14 +134,14 @@ export const Footer: React.FC = () => {
           {/* Column 4: Accreditations */}
           <div className="space-y-3 font-sans">
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-              Certifications
+              Trade resources
             </h4>
             <ul className="space-y-2 text-sm text-slate-600">
-              <li>APEDA Government Registered</li>
-              <li>Spices Board of India Certified</li>
-              <li>FSSAI Central Export License</li>
-              <li>USFDA Registered Facility</li>
-              <li>BRCGS Grade-A Quality</li>
+              <li>Export documentation guidance</li>
+              <li>Product specification discussions</li>
+              <li>Destination import requirements</li>
+              <li>Shipping and packaging planning</li>
+              <li>Documentation subject to product and supplier</li>
             </ul>
           </div>
         </div>

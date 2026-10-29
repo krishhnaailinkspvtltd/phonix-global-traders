@@ -1,5 +1,6 @@
 import React, { useEffect, useSyncExternalStore } from 'react'
 import { MobileHomeExperience } from '@/components/home/MobileHomeExperience'
+import { EditorialDesktopHome } from '@/components/home/EditorialDesktopHome'
 import { HeroSection } from '@/components/home/HeroSection'
 import { StackedTemplatePanels } from '@/components/home/StackedTemplatePanels'
 import { DraggableProductShowcase } from '@/components/home/DraggableProductShowcase'
@@ -27,28 +28,5 @@ export const HomePage: React.FC = () => {
 
   if (isMobile) return <MobileHomeExperience />
 
-  return (
-    <div className="relative overflow-x-clip">
-      {/* 1. Fullscreen Cinematic Hero (Phase 4 & 5) */}
-      <HeroSection />
-
-      {/* 2. Pinned Fullscreen Editorial Scenes (Phase 6) */}
-      <StackedTemplatePanels />
-
-      {/* 3. Carysil-Inspired Draggable Product Showcase (Phase 7) */}
-      <DraggableProductShowcase />
-
-      {/* 4. Film & Motion Showcase: "Maritime In Motion" (Phase 8) */}
-      <MaritimeInMotion />
-
-      {/* 5. Editorial Corporate Governance & Philosophy */}
-      <CompanyEditorial />
-
-      {/* 6. Interactive 2D Maritime Cartography */}
-      <InteractiveTradeMap />
-
-      {/* 7. Closing High-Impact Commercial Action */}
-      <ClosingCta />
-    </div>
-  )
+  return <EditorialDesktopHome />
 }
