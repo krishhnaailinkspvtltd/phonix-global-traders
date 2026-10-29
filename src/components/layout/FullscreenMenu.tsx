@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import { X, ArrowUpRight, Globe, Compass, Clock } from 'lucide-react'
@@ -35,21 +35,21 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: 'SPICES & COMMODITIES',
     sublabel: 'Alleppey Turmeric, Chilies & 1121 Basmati',
-    path: '/products?cat=spices',
+    path: '/products?category=spices-commodities',
     image: '/images/panels/panel-2-sourcing.jpg',
     num: '03',
   },
   {
     label: 'MANUFACTURED GOODS',
     sublabel: 'Morbi Porcelain Tiles & Eco-Ware',
-    path: '/products?cat=manufactured',
+    path: '/products?category=manufactured-goods',
     image: '/images/categories/cat-industrial.jpg',
     num: '04',
   },
   {
     label: 'GLOBAL IMPORTS',
     sublabel: 'California Almonds, Cashews & Pulses',
-    path: '/products?cat=imports',
+    path: '/products?category=global-imports',
     image: '/images/panels/panel-4-markets.jpg',
     num: '05',
   },
@@ -73,6 +73,20 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
   const location = useLocation()
   const [hoveredImage, setHoveredImage] = useState<string>(NAV_ITEMS[0].image)
 
+  useEffect(() => {
+    if (!isOpen) return
+    const oldOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.style.overflow = oldOverflow
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isOpen, onClose])
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -82,7 +96,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed inset-0 z-99999 flex flex-col justify-between bg-canvas/98 text-primary-text backdrop-blur-2xl p-6 md:p-12 lg:p-16 overflow-y-auto select-none"
+          role="dialog" aria-modal="true" aria-label="Site navigation" className="mobile-nav-overlay fixed inset-0 z-99999 flex flex-col justify-between bg-canvas/98 text-primary-text backdrop-blur-2xl p-6 md:p-12 lg:p-16 overflow-y-auto select-none"
         >
           {/* Top Bar inside Menu */}
           <div className="flex items-center justify-between border-b border-border-subtle pb-6">
@@ -118,7 +132,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
             {/* Links Column */}
             <div className="lg:col-span-7 flex flex-col space-y-3 md:space-y-4">
               {NAV_ITEMS.map((item, index) => {
-                const isActive = location.pathname === item.path
+                const isActive = (location.pathname + location.search) === item.path
 
                 return (
                   <motion.div
@@ -131,19 +145,19 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
                       ease: [0.16, 1, 0.3, 1],
                     }}
                     onMouseEnter={() => setHoveredImage(item.image)}
-                    className="group"
+                    className="group mobile-nav-item"
                   >
                     <Link
                       to={item.path}
                       onClick={onClose}
-                      className="inline-flex items-baseline gap-4 md:gap-6 w-full py-1 text-left"
+                      className="mobile-nav-item-link inline-flex items-baseline gap-4 md:gap-6 w-full py-1 text-left"
                     >
                       <span className="font-mono text-xs md:text-sm text-accent tracking-widest">
                         {item.num}
                       </span>
                       <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-4">
                         <span
-                          className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tighter transition-all duration-300 group-hover:translate-x-3 ${
+                          className={`mobile-nav-item-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-extrabold tracking-tighter transition-all duration-300 group-hover:translate-x-3 ${
                             isActive
                               ? 'text-accent'
                               : 'text-primary-text group-hover:text-accent'
@@ -151,7 +165,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
                         >
                           {item.label}
                         </span>
-                        <span className="font-serif italic text-sm sm:text-base text-secondary-text opacity-70 group-hover:opacity-100 transition-opacity">
+                        <span className="mobile-nav-item-subtitle font-serif italic text-sm sm:text-base text-secondary-text opacity-70 group-hover:opacity-100 transition-opacity">
                           {item.sublabel}
                         </span>
                       </div>
