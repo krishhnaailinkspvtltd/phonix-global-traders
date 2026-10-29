@@ -182,7 +182,7 @@ export function UnderstandDashboardPage() {
 
   if (!graphData) {
     return (
-      <div className="min-h-screen bg-canvas text-primary-text flex items-center justify-center pt-24">
+      <div className="site-inner-page min-h-screen bg-canvas text-primary-text flex items-center justify-center pt-24">
         <div className="text-center max-w-md p-8 border border-border-subtle bg-surface rounded-2xl">
           <Info className="w-10 h-10 text-accent mx-auto mb-4" />
           <h2 className="text-xl font-bold mb-2">Knowledge Graph Not Loaded</h2>
@@ -201,7 +201,7 @@ export function UnderstandDashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-canvas text-primary-text pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <div className="site-inner-page min-h-screen bg-canvas text-primary-text pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       {/* Top Header & Telemetry */}
       <div className="max-w-7xl mx-auto mb-6">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-2xl bg-surface border border-border-subtle shadow-sm">
