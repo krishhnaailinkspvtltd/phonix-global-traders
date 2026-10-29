@@ -132,7 +132,7 @@ export const MobileHomeExperience: React.FC = () => {
     const nextIndex = Math.min(COLLECTION.length - 1, Math.max(0, activeCard + direction))
     const target = items[nextIndex]
     if (target) {
-      rail.scrollTo({ left: target.offsetLeft - items[0].offsetLeft, behavior: prefersReducedMotion ? 'instant' : 'smooth' })
+      rail.scrollTo({ left: target.offsetLeft - items[0].offsetLeft, behavior: prefersReducedMotion ? 'auto' : 'smooth' })
       setActiveCard(nextIndex)
     }
   }
@@ -141,11 +141,11 @@ export const MobileHomeExperience: React.FC = () => {
     const rail = railRef.current
     if (!rail) return
     const items = Array.from(rail.querySelectorAll<HTMLElement>('.mx-product-card'))
-    const position = rail.scrollLeft + rail.getBoundingClientRect().left
+    const position = rail.scrollLeft + (items[0]?.offsetLeft ?? 0)
     let closest = 0
     let distance = Number.POSITIVE_INFINITY
     items.forEach((item, index) => {
-      const delta = Math.abs(item.getBoundingClientRect().left - position)
+      const delta = Math.abs(item.offsetLeft - position)
       if (delta < distance) { distance = delta; closest = index }
     })
     setActiveCard(closest)
