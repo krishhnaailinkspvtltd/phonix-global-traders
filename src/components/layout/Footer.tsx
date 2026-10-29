@@ -61,22 +61,22 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/products?cat=spices" className="hover:text-[#1557B0] transition-colors">
+                <Link to="/products?category=spices-commodities" className="hover:text-[#1557B0] transition-colors">
                   Indian Spices &amp; 1121 Basmati
                 </Link>
               </li>
               <li>
-                <Link to="/products?cat=manufactured" className="hover:text-[#1557B0] transition-colors">
+                <Link to="/products?category=manufactured-goods" className="hover:text-[#1557B0] transition-colors">
                   Morbi Architectural Tiles
                 </Link>
               </li>
               <li>
-                <Link to="/products?cat=manufactured" className="hover:text-[#1557B0] transition-colors">
+                <Link to="/products?category=manufactured-goods" className="hover:text-[#1557B0] transition-colors">
                   Areca Palm Eco-Tableware
                 </Link>
               </li>
               <li>
-                <Link to="/products?cat=imports" className="hover:text-[#1557B0] transition-colors">
+                <Link to="/products?category=global-imports" className="hover:text-[#1557B0] transition-colors">
                   Global Commodity Imports
                 </Link>
               </li>
