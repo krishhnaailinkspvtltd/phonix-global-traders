@@ -51,7 +51,7 @@ export const ContactPage: React.FC = () => {
     }
     if (!formData.companyName.trim()) newErrors.companyName = 'Please enter your company name.'
     if (!formData.destinationPort.trim()) newErrors.destinationPort = 'Please specify the destination or delivery location.'
-    if (!formData.message.trim()) newErrors.message = 'Please describe the product, quantity and destination you're interested in.'
+    if (!formData.message.trim()) newErrors.message = 'Please describe the product, quantity and destination of interest.'
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
