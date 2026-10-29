@@ -1,19 +1,41 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useReducedMotion } from 'motion/react'
+import { AnimatePresence, motion, useReducedMotion } from 'motion/react'
 import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, Globe2, MapPin, MoveUpRight, Ship, Sparkles } from 'lucide-react'
 import './mobile-home.css'
 
-const HERO_HIGHLIGHT = {
-  kicker: 'INDIAN ORIGINS / GLOBAL HORIZONS',
-  lineOne: 'FROM INDIA.',
-  lineTwo: 'To everywhere.',
-  description: 'Exceptional Indian produce, spices and manufactured goods — connected to markets around the world.',
-  image: '/images/hero/hero-vessel.jpg',
-  alt: 'Ocean-going container vessel',
-  primary: '/products',
-  primaryText: 'Explore our exports',
-}
+const HERO_SLIDES = [
+  {
+    kicker: 'INDIAN ORIGINS / GLOBAL HORIZONS',
+    lineOne: 'FROM INDIA.',
+    lineTwo: 'To everywhere.',
+    description: 'Exceptional Indian produce, spices and manufactured goods — connected to markets around the world.',
+    image: '/images/hero/hero-vessel.jpg',
+    alt: 'Ocean-going container vessel',
+    primary: '/products',
+    primaryText: 'Explore our exports',
+  },
+  {
+    kicker: 'SOURCING / SHIPPING / CONNECTIONS',
+    lineOne: 'BUILT TO',
+    lineTwo: 'cross borders.',
+    description: 'From the agricultural heartlands of India to international supply chains, every connection matters.',
+    image: '/images/hero/hero-port.jpg',
+    alt: 'Busy international container port',
+    primary: '/global-trade',
+    primaryText: 'Our trade routes',
+  },
+  {
+    kicker: 'EXPORTS & IMPORTS / ONE NETWORK',
+    lineOne: 'WORLDWIDE',
+    lineTwo: 'by nature.',
+    description: 'Discover how our export and import divisions bring products, people and opportunities together.',
+    image: '/images/trade/trade-corridor.jpg',
+    alt: 'Maritime global trade corridor',
+    primary: '/contact',
+    primaryText: 'Start a conversation',
+  },
+]
 
 const COLLECTION = [
   {
@@ -52,9 +74,19 @@ const COLLECTION = [
 
 export const MobileHomeExperience: React.FC = () => {
   const prefersReducedMotion = useReducedMotion()
+  const [activeSlide, setActiveSlide] = useState(0)
   const [activeCard, setActiveCard] = useState(0)
+  const heroTouch = useRef<{ x: number; y: number } | null>(null)
   const railRef = useRef<HTMLDivElement>(null)
   const homeRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (prefersReducedMotion) return
+    const timer = window.setInterval(() => {
+      if (!document.hidden) setActiveSlide(current => (current + 1) % HERO_SLIDES.length)
+    }, 6500)
+    return () => window.clearInterval(timer)
+  }, [prefersReducedMotion])
 
   useEffect(() => {
     const root = homeRef.current
@@ -75,6 +107,23 @@ export const MobileHomeExperience: React.FC = () => {
       root.classList.remove('mx-motion-ready')
     }
   }, [prefersReducedMotion])
+
+  const chooseSlide = (index: number) => setActiveSlide((index + HERO_SLIDES.length) % HERO_SLIDES.length)
+
+  const handleHeroTouchStart = (event: React.TouchEvent<HTMLElement>) => {
+    heroTouch.current = { x: event.touches[0].clientX, y: event.touches[0].clientY }
+  }
+
+  const handleHeroTouchEnd = (event: React.TouchEvent<HTMLElement>) => {
+    const start = heroTouch.current
+    heroTouch.current = null
+    if (!start) return
+    const dx = event.changedTouches[0].clientX - start.x
+    const dy = event.changedTouches[0].clientY - start.y
+    if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+      setActiveSlide(current => (current + (dx < 0 ? 1 : -1) + HERO_SLIDES.length) % HERO_SLIDES.length)
+    }
+  }
 
   const moveRail = (direction: number) => {
     const rail = railRef.current
@@ -102,20 +151,32 @@ export const MobileHomeExperience: React.FC = () => {
     setActiveCard(closest)
   }
 
-  const current = HERO_HIGHLIGHT
+  const current = HERO_SLIDES[activeSlide]
 
   return (
     <div className="mx-home" ref={homeRef}>
       <section
         className="mx-hero"
         aria-label="Welcome to Phonix Global Trade"
+        onTouchStart={handleHeroTouchStart}
+        onTouchEnd={handleHeroTouchEnd}
       >
         <div className="mx-hero-media" aria-hidden="true">
-          <img src={current.image} alt="" fetchPriority="high" />
+          <AnimatePresence initial={false}>
+            <motion.img
+              key={current.image}
+              src={current.image}
+              alt=""
+              initial={prefersReducedMotion ? false : { opacity: 0, scale: 1.08 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: prefersReducedMotion ? 0 : 1.05, ease: 'easeInOut' }}
+            />
+          </AnimatePresence>
           <div className="mx-hero-vignette" />
         </div>
 
-        <div className="mx-hero-content">
+        <div className="mx-hero-content" key={activeSlide}>
           <div className="mx-eyebrow mx-eyebrow-light">
             <span className="mx-live-dot" />
             <span>{current.kicker}</span>
@@ -134,6 +195,17 @@ export const MobileHomeExperience: React.FC = () => {
         </div>
 
         <div className="mx-hero-bottom">
+          <div className="mx-slide-controllers" aria-label="Hero slides">
+            <button type="button" className="mx-hero-arrow" onClick={() => chooseSlide(activeSlide - 1)} aria-label="Previous featured story"><ArrowLeft size={18} /></button>
+            <button type="button" className="mx-hero-arrow" onClick={() => chooseSlide(activeSlide + 1)} aria-label="Next featured story"><ArrowRight size={18} /></button>
+          </div>
+          <div className="mx-hero-progress" aria-label="Slide position">
+            {HERO_SLIDES.map((slide, index) => (
+              <button key={slide.kicker} type="button" className={index === activeSlide ? 'mx-progress-item mx-current' : 'mx-progress-item'} onClick={() => chooseSlide(index)} aria-label={'Show story ' + (index + 1)} aria-current={index === activeSlide ? 'true' : undefined}>
+                {index === activeSlide && <span key={activeSlide} className="mx-progress-fill" />}
+              </button>
+            ))}
+          </div>
           <a href="#discover-phonix" className="mx-scroll-cue" aria-label="Scroll to discover Phonix"><ArrowDown size={16} /><span>SCROLL TO DISCOVER</span></a>
         </div>
       </section>
