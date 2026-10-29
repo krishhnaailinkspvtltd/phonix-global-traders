@@ -50,7 +50,7 @@ const MOTION_FILMS: MotionFilm[] = [
     desc: 'Direct dockside rail linkages and containerized stuffing from Morbi tile kilns, Areca palm leaf workshops, and Punjab Basmati rice mills to coastal discharge harbors.',
     image: '/images/products/morbi-tiles.jpg',
     category: 'MANUFACTURING',
-    link: '/products?cat=manufactured',
+    link: '/products?category=manufactured-goods',
     linkText: 'INSPECT MANUFACTURED',
   },
 ]
@@ -84,7 +84,7 @@ export const MaritimeInMotion: React.FC = () => {
         </div>
 
         {/* 3-Panel Interactive Motion Canvas (Carysil-Style Expandable Layout) */}
-        <div className="flex flex-col lg:flex-row gap-6 h-[640px] sm:h-[680px]">
+        <div className="home-motion-films flex flex-col lg:flex-row gap-6 h-[640px] sm:h-[680px]">
           {MOTION_FILMS.map((film) => {
             const isActive = film.id === activeFilmId
 
@@ -95,7 +95,7 @@ export const MaritimeInMotion: React.FC = () => {
                 onClick={() => setActiveFilmId(film.id)}
                 onMouseEnter={() => setActiveFilmId(film.id)}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className={`relative rounded-3xl overflow-hidden cursor-pointer border transition-colors duration-500 ${
+                className={`home-scene-card relative rounded-3xl overflow-hidden cursor-pointer border transition-colors duration-500 ${
                   isActive
                     ? 'lg:flex-[2.6] border-[#66A8FF]/60 shadow-2xl'
                     : 'lg:flex-[0.7] border-white/10 hover:border-white/30'
