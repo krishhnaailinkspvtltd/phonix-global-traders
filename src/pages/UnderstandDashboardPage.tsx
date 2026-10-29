@@ -169,7 +169,7 @@ export function UnderstandDashboardPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-canvas text-primary-text flex items-center justify-center pt-24">
+      <div className="site-inner-page min-h-screen bg-canvas text-primary-text flex items-center justify-center pt-24">
         <div className="flex flex-col items-center gap-4">
           <div className="w-12 h-12 border-3 border-accent border-t-transparent rounded-full animate-spin" />
           <p className="font-mono text-sm uppercase tracking-widest text-secondary-text">
