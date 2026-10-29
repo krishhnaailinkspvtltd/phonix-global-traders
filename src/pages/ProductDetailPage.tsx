@@ -23,7 +23,7 @@ export const ProductDetailPage: React.FC = () => {
   ).slice(0, 3)
 
   return (
-    <div className="pt-28 sm:pt-32 pb-20 text-primary-text select-none overflow-x-hidden">
+    <div className="site-inner-page pt-28 sm:pt-32 pb-20 text-primary-text select-none overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Return Link */}
