@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './mobile-site-navigation.css'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ThemeProvider } from '@/context/ThemeContext'
 import { CursorProvider } from '@/context/CursorContext'
