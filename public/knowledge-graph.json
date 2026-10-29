@@ -1,0 +1,1421 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "PHONIX GLOBAL TRADE",
+    "languages": [
+      "typescript",
+      "html",
+      "css",
+      "json",
+      "markdown"
+    ],
+    "frameworks": [
+      "React 19",
+      "Vite 8",
+      "Tailwind CSS v4",
+      "Motion",
+      "GSAP",
+      "Lenis",
+      "Playwright"
+    ],
+    "description": "International import-export & bulk commodity trading digital flagship with dual themes, 2D kinetic depth, and full multi-page routing.",
+    "analyzedAt": "2026-10-29T13:00:09.109Z",
+    "gitCommitHash": "initial-commit"
+  },
+  "nodes": [
+    {
+      "id": "file:src/main.tsx",
+      "type": "file",
+      "name": "main.tsx",
+      "filePath": "src/main.tsx",
+      "summary": "Application entry point mounting React 19 root into DOM",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/App.tsx",
+      "type": "file",
+      "name": "App.tsx",
+      "filePath": "src/App.tsx",
+      "summary": "Core application layout with React Router, ThemeProvider, and Lenis smooth scroll",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/index.css",
+      "type": "file",
+      "name": "index.css",
+      "filePath": "src/index.css",
+      "summary": "Tailwind CSS v4 theme variables, sovereign trading palette tokens, and typography definitions",
+      "tags": [
+        "code",
+        "css",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/App.css",
+      "type": "file",
+      "name": "App.css",
+      "filePath": "src/App.css",
+      "summary": "Secondary styles and global animation utility overrides",
+      "tags": [
+        "code",
+        "css",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/lib/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "src/lib/utils.ts",
+      "summary": "Tailwind class merging utility (cn) utilizing clsx and tailwind-merge",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/data/tradeData.ts",
+      "type": "file",
+      "name": "tradeData.ts",
+      "filePath": "src/data/tradeData.ts",
+      "summary": "Authoritative dataset for commodities, trade corridors, ports, and market indices",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/context/ThemeContext.tsx",
+      "type": "file",
+      "name": "ThemeContext.tsx",
+      "filePath": "src/context/ThemeContext.tsx",
+      "summary": "Zero-FOUC dual theme provider supporting Dark and Light modes with localStorage persistence",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/context/CursorContext.tsx",
+      "type": "file",
+      "name": "CursorContext.tsx",
+      "filePath": "src/context/CursorContext.tsx",
+      "summary": "Global cursor context managing magnetic hover states and custom cursor interactions",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/layout/Navbar.tsx",
+      "type": "file",
+      "name": "Navbar.tsx",
+      "filePath": "src/components/layout/Navbar.tsx",
+      "summary": "Floating glassmorphism header navigation with route switching and mobile drawer",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/layout/Footer.tsx",
+      "type": "file",
+      "name": "Footer.tsx",
+      "filePath": "src/components/layout/Footer.tsx",
+      "summary": "Comprehensive executive footer with live global market clocks and international hubs",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/home/HeroSection.tsx",
+      "type": "file",
+      "name": "HeroSection.tsx",
+      "filePath": "src/components/home/HeroSection.tsx",
+      "summary": "Cinematic parallax hero experience with headline animation, metrics, and price ticker",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/home/StackedTemplatePanels.tsx",
+      "type": "file",
+      "name": "StackedTemplatePanels.tsx",
+      "filePath": "src/components/home/StackedTemplatePanels.tsx",
+      "summary": "2D pinned scroll narrative cycling through 5 core operational dossiers with quick tabs",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/home/HorizontalShowcase.tsx",
+      "type": "file",
+      "name": "HorizontalShowcase.tsx",
+      "filePath": "src/components/home/HorizontalShowcase.tsx",
+      "summary": "Horizontal panoramic scrub showcasing global logistics capabilities and alliances",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/home/CompanyEditorial.tsx",
+      "type": "file",
+      "name": "CompanyEditorial.tsx",
+      "filePath": "src/components/home/CompanyEditorial.tsx",
+      "summary": "Swiss editorial company profile detailing corporate governance and trade triad",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/home/CategoryShowcase.tsx",
+      "type": "file",
+      "name": "CategoryShowcase.tsx",
+      "filePath": "src/components/home/CategoryShowcase.tsx",
+      "summary": "Interactive commodity category section with dynamic background image preview switching",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/home/InteractiveTradeMap.tsx",
+      "type": "file",
+      "name": "InteractiveTradeMap.tsx",
+      "filePath": "src/components/home/InteractiveTradeMap.tsx",
+      "summary": "2D vector Mercator trade map with animated shipping lanes and transit statistics",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/components/home/ClosingCta.tsx",
+      "type": "file",
+      "name": "ClosingCta.tsx",
+      "filePath": "src/components/home/ClosingCta.tsx",
+      "summary": "Editorial conversion section with consultation scheduling and booking actions",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ui/CinematicLoader.tsx",
+      "type": "file",
+      "name": "CinematicLoader.tsx",
+      "filePath": "src/components/ui/CinematicLoader.tsx",
+      "summary": "Branded 3-stage opening sequence with 0-100% counter and keyboard skip",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ui/CustomCursor.tsx",
+      "type": "file",
+      "name": "CustomCursor.tsx",
+      "filePath": "src/components/ui/CustomCursor.tsx",
+      "summary": "Hardware-accelerated custom cursor follower with scale feedback on interactive targets",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ui/SmoothScroll.tsx",
+      "type": "file",
+      "name": "SmoothScroll.tsx",
+      "filePath": "src/components/ui/SmoothScroll.tsx",
+      "summary": "Lenis inertial smooth scrolling provider configured for 60fps kinetic navigation",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/components/ui/ThemeToggle.tsx",
+      "type": "file",
+      "name": "ThemeToggle.tsx",
+      "filePath": "src/components/ui/ThemeToggle.tsx",
+      "summary": "Animated micro-interaction toggle button switching between Dark and Light palettes",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/pages/HomePage.tsx",
+      "type": "file",
+      "name": "HomePage.tsx",
+      "filePath": "src/pages/HomePage.tsx",
+      "summary": "Primary homepage assembling hero, stacked panels, horizontal gallery, and trade map",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/AboutPage.tsx",
+      "type": "file",
+      "name": "AboutPage.tsx",
+      "filePath": "src/pages/AboutPage.tsx",
+      "summary": "Corporate philosophy, trade triad governance, and international assay accreditations",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/ProductsPage.tsx",
+      "type": "file",
+      "name": "ProductsPage.tsx",
+      "filePath": "src/pages/ProductsPage.tsx",
+      "summary": "Commodity and cargo catalog with multi-sector filter pills and HS Code tagging",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/ProductDetailPage.tsx",
+      "type": "file",
+      "name": "ProductDetailPage.tsx",
+      "filePath": "src/pages/ProductDetailPage.tsx",
+      "summary": "Detailed commodity specification view with assay limits table and inquiry link",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/GlobalTradePage.tsx",
+      "type": "file",
+      "name": "GlobalTradePage.tsx",
+      "filePath": "src/pages/GlobalTradePage.tsx",
+      "summary": "Intercontinental trade corridors hub with maritime schedules and desk directory",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/GalleryPage.tsx",
+      "type": "file",
+      "name": "GalleryPage.tsx",
+      "filePath": "src/pages/GalleryPage.tsx",
+      "summary": "Maritime terminal photography archive with responsive masonry grid and lightbox",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/pages/ContactPage.tsx",
+      "type": "file",
+      "name": "ContactPage.tsx",
+      "filePath": "src/pages/ContactPage.tsx",
+      "summary": "Commercial inquiry desk with verified form validation and simulated confirmation modal",
+      "tags": [
+        "code",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:vite.config.ts",
+      "type": "config",
+      "name": "vite.config.ts",
+      "filePath": "vite.config.ts",
+      "summary": "Vite build tooling configuration with Tailwind CSS v4 and path aliases",
+      "tags": [
+        "config",
+        "typescript",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "package.json",
+      "summary": "NPM dependencies manifest declaring React 19, Motion, GSAP, and Lenis",
+      "tags": [
+        "config",
+        "json",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:tsconfig.app.json",
+      "type": "config",
+      "name": "tsconfig.app.json",
+      "filePath": "tsconfig.app.json",
+      "summary": "TypeScript compiler configuration with strict mode and path mappings",
+      "tags": [
+        "config",
+        "json",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:index.html",
+      "type": "document",
+      "name": "index.html",
+      "filePath": "index.html",
+      "summary": "HTML shell with preconnected Google Fonts and zero-FOUC theme initialization script",
+      "tags": [
+        "document",
+        "html",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Comprehensive project architecture overview, quick start, and deployment guide",
+      "tags": [
+        "document",
+        "markdown",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:ATTRIBUTION.md",
+      "type": "document",
+      "name": "ATTRIBUTION.md",
+      "filePath": "ATTRIBUTION.md",
+      "summary": "Commercial licensing and source attribution for photographic maritime assets",
+      "tags": [
+        "document",
+        "markdown",
+        "frontend",
+        "production"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/main.tsx:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "src/main.tsx",
+      "summary": "Root bootstrap rendering App inside StrictMode",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/App.tsx:App",
+      "type": "function",
+      "name": "App",
+      "filePath": "src/App.tsx",
+      "summary": "Master React Router routing component wrapped with Theme and Cursor providers",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/lib/utils.ts:cn",
+      "type": "function",
+      "name": "cn",
+      "filePath": "src/lib/utils.ts",
+      "summary": "Merges Tailwind utility classes with clsx and twMerge",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/context/ThemeContext.tsx:ThemeProvider",
+      "type": "function",
+      "name": "ThemeProvider",
+      "filePath": "src/context/ThemeContext.tsx",
+      "summary": "React context provider managing light/dark theme state",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/context/ThemeContext.tsx:useTheme",
+      "type": "function",
+      "name": "useTheme",
+      "filePath": "src/context/ThemeContext.tsx",
+      "summary": "Hook exposing theme state and toggle function",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/context/CursorContext.tsx:CursorProvider",
+      "type": "function",
+      "name": "CursorProvider",
+      "filePath": "src/context/CursorContext.tsx",
+      "summary": "Context provider managing custom mouse coordinates and interaction states",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/layout/Navbar.tsx:Navbar",
+      "type": "function",
+      "name": "Navbar",
+      "filePath": "src/components/layout/Navbar.tsx",
+      "summary": "Fixed navigation bar with responsive drawer and theme switcher",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/layout/Footer.tsx:Footer",
+      "type": "function",
+      "name": "Footer",
+      "filePath": "src/components/layout/Footer.tsx",
+      "summary": "Bottom layout component with multi-timezone market clocks",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/home/HeroSection.tsx:HeroSection",
+      "type": "function",
+      "name": "HeroSection",
+      "filePath": "src/components/home/HeroSection.tsx",
+      "summary": "Hero viewport displaying kinetic typography and live commodity ticker",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/home/StackedTemplatePanels.tsx:StackedTemplatePanels",
+      "type": "function",
+      "name": "StackedTemplatePanels",
+      "filePath": "src/components/home/StackedTemplatePanels.tsx",
+      "summary": "Pinned scroll narrative with five layered editorial cards",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/home/HorizontalShowcase.tsx:HorizontalShowcase",
+      "type": "function",
+      "name": "HorizontalShowcase",
+      "filePath": "src/components/home/HorizontalShowcase.tsx",
+      "summary": "GSAP-driven horizontal scrubbing gallery",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/home/CompanyEditorial.tsx:CompanyEditorial",
+      "type": "function",
+      "name": "CompanyEditorial",
+      "filePath": "src/components/home/CompanyEditorial.tsx",
+      "summary": "Corporate overview and trade triad pillar grid",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/home/CategoryShowcase.tsx:CategoryShowcase",
+      "type": "function",
+      "name": "CategoryShowcase",
+      "filePath": "src/components/home/CategoryShowcase.tsx",
+      "summary": "Commodity sector showcase with interactive image previews",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/home/InteractiveTradeMap.tsx:InteractiveTradeMap",
+      "type": "function",
+      "name": "InteractiveTradeMap",
+      "filePath": "src/components/home/InteractiveTradeMap.tsx",
+      "summary": "Vector Mercator shipping lanes projection",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/home/ClosingCta.tsx:ClosingCta",
+      "type": "function",
+      "name": "ClosingCta",
+      "filePath": "src/components/home/ClosingCta.tsx",
+      "summary": "Conversion banner for trade inquiries",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/CinematicLoader.tsx:CinematicLoader",
+      "type": "function",
+      "name": "CinematicLoader",
+      "filePath": "src/components/ui/CinematicLoader.tsx",
+      "summary": "Opening branded animation overlay",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/CustomCursor.tsx:CustomCursor",
+      "type": "function",
+      "name": "CustomCursor",
+      "filePath": "src/components/ui/CustomCursor.tsx",
+      "summary": "Custom pointer interaction element",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/SmoothScroll.tsx:SmoothScroll",
+      "type": "function",
+      "name": "SmoothScroll",
+      "filePath": "src/components/ui/SmoothScroll.tsx",
+      "summary": "Lenis smooth scrolling lifecycle manager",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/components/ui/ThemeToggle.tsx:ThemeToggle",
+      "type": "function",
+      "name": "ThemeToggle",
+      "filePath": "src/components/ui/ThemeToggle.tsx",
+      "summary": "Light/dark theme toggle button",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/pages/HomePage.tsx:HomePage",
+      "type": "function",
+      "name": "HomePage",
+      "filePath": "src/pages/HomePage.tsx",
+      "summary": "Primary scroll experience route",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/pages/AboutPage.tsx:AboutPage",
+      "type": "function",
+      "name": "AboutPage",
+      "filePath": "src/pages/AboutPage.tsx",
+      "summary": "Corporate philosophy and compliance page",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/pages/ProductsPage.tsx:ProductsPage",
+      "type": "function",
+      "name": "ProductsPage",
+      "filePath": "src/pages/ProductsPage.tsx",
+      "summary": "Filterable commodity catalog page",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/pages/ProductDetailPage.tsx:ProductDetailPage",
+      "type": "function",
+      "name": "ProductDetailPage",
+      "filePath": "src/pages/ProductDetailPage.tsx",
+      "summary": "Individual commodity specification view",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/pages/GlobalTradePage.tsx:GlobalTradePage",
+      "type": "function",
+      "name": "GlobalTradePage",
+      "filePath": "src/pages/GlobalTradePage.tsx",
+      "summary": "Intercontinental trade network corridors page",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/pages/GalleryPage.tsx:GalleryPage",
+      "type": "function",
+      "name": "GalleryPage",
+      "filePath": "src/pages/GalleryPage.tsx",
+      "summary": "Maritime photo gallery with modal lightbox",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/pages/ContactPage.tsx:ContactPage",
+      "type": "function",
+      "name": "ContactPage",
+      "filePath": "src/pages/ContactPage.tsx",
+      "summary": "Trading desk contact and inquiry page",
+      "tags": [
+        "component",
+        "react",
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/main.tsx",
+      "target": "function:src/main.tsx:main",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "function:src/App.tsx:App",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/lib/utils.ts",
+      "target": "function:src/lib/utils.ts:cn",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/context/ThemeContext.tsx",
+      "target": "function:src/context/ThemeContext.tsx:ThemeProvider",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/context/ThemeContext.tsx",
+      "target": "function:src/context/ThemeContext.tsx:useTheme",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/context/CursorContext.tsx",
+      "target": "function:src/context/CursorContext.tsx:CursorProvider",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/layout/Navbar.tsx",
+      "target": "function:src/components/layout/Navbar.tsx:Navbar",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/layout/Footer.tsx",
+      "target": "function:src/components/layout/Footer.tsx:Footer",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/home/HeroSection.tsx",
+      "target": "function:src/components/home/HeroSection.tsx:HeroSection",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/home/StackedTemplatePanels.tsx",
+      "target": "function:src/components/home/StackedTemplatePanels.tsx:StackedTemplatePanels",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/home/HorizontalShowcase.tsx",
+      "target": "function:src/components/home/HorizontalShowcase.tsx:HorizontalShowcase",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/home/CompanyEditorial.tsx",
+      "target": "function:src/components/home/CompanyEditorial.tsx:CompanyEditorial",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/home/CategoryShowcase.tsx",
+      "target": "function:src/components/home/CategoryShowcase.tsx:CategoryShowcase",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/home/InteractiveTradeMap.tsx",
+      "target": "function:src/components/home/InteractiveTradeMap.tsx:InteractiveTradeMap",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/home/ClosingCta.tsx",
+      "target": "function:src/components/home/ClosingCta.tsx:ClosingCta",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/CinematicLoader.tsx",
+      "target": "function:src/components/ui/CinematicLoader.tsx:CinematicLoader",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/CustomCursor.tsx",
+      "target": "function:src/components/ui/CustomCursor.tsx:CustomCursor",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/SmoothScroll.tsx",
+      "target": "function:src/components/ui/SmoothScroll.tsx:SmoothScroll",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/components/ui/ThemeToggle.tsx",
+      "target": "function:src/components/ui/ThemeToggle.tsx:ThemeToggle",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "function:src/pages/HomePage.tsx:HomePage",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/pages/AboutPage.tsx",
+      "target": "function:src/pages/AboutPage.tsx:AboutPage",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/pages/ProductsPage.tsx",
+      "target": "function:src/pages/ProductsPage.tsx:ProductsPage",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/pages/ProductDetailPage.tsx",
+      "target": "function:src/pages/ProductDetailPage.tsx:ProductDetailPage",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/pages/GlobalTradePage.tsx",
+      "target": "function:src/pages/GlobalTradePage.tsx:GlobalTradePage",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/pages/GalleryPage.tsx",
+      "target": "function:src/pages/GalleryPage.tsx:GalleryPage",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/pages/ContactPage.tsx",
+      "target": "function:src/pages/ContactPage.tsx:ContactPage",
+      "type": "contains",
+      "weight": 1
+    },
+    {
+      "source": "file:src/main.tsx",
+      "target": "file:src/App.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/main.tsx",
+      "target": "file:src/index.css",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/App.css",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/context/ThemeContext.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/context/CursorContext.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/components/ui/SmoothScroll.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/components/ui/CustomCursor.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/components/ui/CinematicLoader.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/components/layout/Navbar.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/components/layout/Footer.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/pages/HomePage.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/pages/AboutPage.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/pages/ProductsPage.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/pages/ProductDetailPage.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/pages/GlobalTradePage.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/pages/GalleryPage.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/App.tsx",
+      "target": "file:src/pages/ContactPage.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/layout/Navbar.tsx",
+      "target": "file:src/components/ui/ThemeToggle.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/layout/Navbar.tsx",
+      "target": "file:src/context/ThemeContext.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/layout/Navbar.tsx",
+      "target": "file:src/lib/utils.ts",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "file:src/components/home/HeroSection.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "file:src/components/home/StackedTemplatePanels.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "file:src/components/home/HorizontalShowcase.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "file:src/components/home/CompanyEditorial.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "file:src/components/home/CategoryShowcase.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "file:src/components/home/InteractiveTradeMap.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/HomePage.tsx",
+      "target": "file:src/components/home/ClosingCta.tsx",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/ProductsPage.tsx",
+      "target": "file:src/data/tradeData.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/ProductDetailPage.tsx",
+      "target": "file:src/data/tradeData.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/GlobalTradePage.tsx",
+      "target": "file:src/data/tradeData.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/pages/GalleryPage.tsx",
+      "target": "file:src/data/tradeData.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/home/InteractiveTradeMap.tsx",
+      "target": "file:src/data/tradeData.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/components/home/StackedTemplatePanels.tsx",
+      "target": "file:src/data/tradeData.ts",
+      "type": "imports",
+      "weight": 0.8
+    },
+    {
+      "source": "config:vite.config.ts",
+      "target": "file:src/main.tsx",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:package.json",
+      "target": "file:src/main.tsx",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "config:tsconfig.app.json",
+      "target": "file:src/main.tsx",
+      "type": "configures",
+      "weight": 0.6
+    },
+    {
+      "source": "document:index.html",
+      "target": "file:src/main.tsx",
+      "type": "documents",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/App.tsx",
+      "type": "documents",
+      "weight": 0.5
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:build-config",
+      "name": "Build & Project Configuration",
+      "description": "Vite compiler, TypeScript configurations, project manifests, and static index template",
+      "nodeIds": [
+        "config:vite.config.ts",
+        "config:package.json",
+        "config:tsconfig.app.json",
+        "document:index.html"
+      ]
+    },
+    {
+      "id": "layer:theme-styling",
+      "name": "Theme Engine & Design Tokens",
+      "description": "Tailwind CSS v4 theme variables, sovereign trading palette tokens, and styling utilities",
+      "nodeIds": [
+        "file:src/index.css",
+        "file:src/App.css",
+        "file:src/lib/utils.ts"
+      ]
+    },
+    {
+      "id": "layer:state-runtime",
+      "name": "State & Runtime Context",
+      "description": "Global application contexts managing theme preference, custom cursor interactions, and smooth scroll",
+      "nodeIds": [
+        "file:src/context/ThemeContext.tsx",
+        "file:src/context/CursorContext.tsx",
+        "file:src/components/ui/SmoothScroll.tsx"
+      ]
+    },
+    {
+      "id": "layer:data-domain",
+      "name": "Trade Data & Specifications",
+      "description": "Authoritative data models for global commodities, assay standards, shipping corridors, and port terminals",
+      "nodeIds": [
+        "file:src/data/tradeData.ts"
+      ]
+    },
+    {
+      "id": "layer:ui-primitives",
+      "name": "Core UI & Interaction Components",
+      "description": "Foundational UI primitives including opening cinematic loader, hardware cursor follower, and theme switch",
+      "nodeIds": [
+        "file:src/components/ui/CinematicLoader.tsx",
+        "file:src/components/ui/CustomCursor.tsx",
+        "file:src/components/ui/ThemeToggle.tsx"
+      ]
+    },
+    {
+      "id": "layer:layout-shell",
+      "name": "Application Shell & Navigation",
+      "description": "Master application entry, router shell, floating glass header, and multi-timezone executive footer",
+      "nodeIds": [
+        "file:src/main.tsx",
+        "file:src/App.tsx",
+        "file:src/components/layout/Navbar.tsx",
+        "file:src/components/layout/Footer.tsx"
+      ]
+    },
+    {
+      "id": "layer:home-narrative-sections",
+      "name": "Cinematic Homepage Narrative Sections",
+      "description": "Interactive editorial sections powering the homepage scroll story from hero to trade corridors",
+      "nodeIds": [
+        "file:src/components/home/HeroSection.tsx",
+        "file:src/components/home/StackedTemplatePanels.tsx",
+        "file:src/components/home/HorizontalShowcase.tsx",
+        "file:src/components/home/CompanyEditorial.tsx",
+        "file:src/components/home/CategoryShowcase.tsx",
+        "file:src/components/home/InteractiveTradeMap.tsx",
+        "file:src/components/home/ClosingCta.tsx"
+      ]
+    },
+    {
+      "id": "layer:pages-views",
+      "name": "Application Pages & Routes",
+      "description": "Route-level page views implementing catalog, detail dossiers, corridors, gallery, and contact",
+      "nodeIds": [
+        "file:src/pages/HomePage.tsx",
+        "file:src/pages/AboutPage.tsx",
+        "file:src/pages/ProductsPage.tsx",
+        "file:src/pages/ProductDetailPage.tsx",
+        "file:src/pages/GlobalTradePage.tsx",
+        "file:src/pages/GalleryPage.tsx",
+        "file:src/pages/ContactPage.tsx"
+      ]
+    },
+    {
+      "id": "layer:documentation",
+      "name": "Documentation & Licensing",
+      "description": "Master documentation detailing architecture, engineering standards, and photographic asset licenses",
+      "nodeIds": [
+        "document:README.md",
+        "document:ATTRIBUTION.md"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "Project Architecture & Brand Identity",
+      "description": "Start with the README to understand the core mission: a high-end Swiss editorial import-export flagship with zero heavy 3D.",
+      "nodeIds": [
+        "document:README.md"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "Application Bootstrap & Strict Routing",
+      "description": "Inspect main.tsx and App.tsx to see the clean mounting sequence, React Router structure, and global providers.",
+      "nodeIds": [
+        "file:src/main.tsx",
+        "file:src/App.tsx"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "Zero-FOUC Dual Theme System",
+      "description": "Examine ThemeContext.tsx and index.css for the institutional maritime and obsidian trade palettes.",
+      "nodeIds": [
+        "file:src/context/ThemeContext.tsx",
+        "file:src/index.css"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "Kinetic Smooth Scrolling & UI Shell",
+      "description": "Understand how Lenis smooth scrolling and floating glassmorphism navigation deliver an agency-grade feel.",
+      "nodeIds": [
+        "file:src/components/ui/SmoothScroll.tsx",
+        "file:src/components/layout/Navbar.tsx"
+      ]
+    },
+    {
+      "order": 5,
+      "title": "Full-Screen Parallax Hero & Ticker",
+      "description": "Explore the hero section combining oversized Plus Jakarta Sans typography, maritime port photography, and live commodity ticker.",
+      "nodeIds": [
+        "file:src/components/home/HeroSection.tsx"
+      ]
+    },
+    {
+      "order": 6,
+      "title": "Pinned 2D Stacked Template Panels",
+      "description": "Inspect StackedTemplatePanels.tsx to see the critical 2D kinetic scrolling effect cycling through 5 operations dossiers.",
+      "nodeIds": [
+        "file:src/components/home/StackedTemplatePanels.tsx"
+      ]
+    },
+    {
+      "order": 7,
+      "title": "Horizontal Panoramic Gallery Scrub",
+      "description": "Review HorizontalShowcase.tsx for smooth horizontal gallery scrolling showcasing global terminals and alliances.",
+      "nodeIds": [
+        "file:src/components/home/HorizontalShowcase.tsx"
+      ]
+    },
+    {
+      "order": 8,
+      "title": "Interactive 2D Trade Corridor Map",
+      "description": "Explore InteractiveTradeMap.tsx featuring vector Mercator shipping lanes, live pulse nodes, and transit metrics.",
+      "nodeIds": [
+        "file:src/components/home/InteractiveTradeMap.tsx"
+      ]
+    },
+    {
+      "order": 9,
+      "title": "Commodity Specifications & Assay Standards",
+      "description": "Learn how products and certified chemical assay limits are modeled in tradeData.ts and rendered across catalog and detail views.",
+      "nodeIds": [
+        "file:src/data/tradeData.ts",
+        "file:src/pages/ProductsPage.tsx",
+        "file:src/pages/ProductDetailPage.tsx"
+      ]
+    },
+    {
+      "order": 10,
+      "title": "Maritime Photo Gallery & Lightbox",
+      "description": "See the terminal and vessel photo archive with interactive fullscreen lightbox and keyboard dismiss.",
+      "nodeIds": [
+        "file:src/pages/GalleryPage.tsx"
+      ]
+    },
+    {
+      "order": 11,
+      "title": "Commercial Inquiry Desk & Validation",
+      "description": "Review ContactPage.tsx featuring validated RFQ parameters and a simulated confirmation modal with reference tracking.",
+      "nodeIds": [
+        "file:src/pages/ContactPage.tsx"
+      ]
+    }
+  ]
+}

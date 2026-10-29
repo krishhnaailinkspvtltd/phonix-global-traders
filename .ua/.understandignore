@@ -1,0 +1,6 @@
+# Understand-Anything Default Ignore Patterns
+node_modules/
+dist/
+.git/
+*.zip
+public/screenshots/
