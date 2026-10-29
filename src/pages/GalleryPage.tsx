@@ -159,7 +159,7 @@ export const GalleryPage: React.FC = () => {
                     event.preventDefault()
                     setSelectedPhotoIndex(originalIndex)
                   }
-                }
+                }}
                 onMouseEnter={() => setCursor('EXPAND', 'action')}
                 onMouseLeave={resetCursor}
                 className={`${colSpan} group relative rounded-2xl border border-border-strong bg-surface p-3.5 cursor-pointer transition-all duration-300 hover:border-accent shadow-sm hover:shadow-xl`}
