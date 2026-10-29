@@ -197,6 +197,7 @@ export const MobileHomeExperience: React.FC = () => {
         <div className="mx-hero-bottom">
           <div className="mx-slide-controllers" aria-label="Hero slides">
             <button type="button" className="mx-hero-arrow" onClick={() => chooseSlide(activeSlide - 1)} aria-label="Previous featured story"><ArrowLeft size={18} /></button>
+            <span className="mx-slide-count">0{activeSlide + 1}<span>/</span>0{HERO_SLIDES.length}</span>
             <button type="button" className="mx-hero-arrow" onClick={() => chooseSlide(activeSlide + 1)} aria-label="Next featured story"><ArrowRight size={18} /></button>
           </div>
           <div className="mx-hero-progress" aria-label="Slide position">
@@ -213,7 +214,7 @@ export const MobileHomeExperience: React.FC = () => {
       <section className="mx-intro" id="discover-phonix">
         <div className="mx-section-header" data-reveal>
           <div className="mx-section-kicker"><span className="mx-small-line" /> THE WORLD, CONNECTED</div>
-          <h2 className="mx-editorial-heading">From Indian soil <em>to global shelves.</em></h2>
+          <h2 className="mx-editorial-heading">Good things <em>travel far.</em></h2>
           <p>From India’s farms and factories to international markets, we move products with purpose. Explore a new perspective on global trade.</p>
         </div>
         <div className="mx-intro-visual" data-reveal>
@@ -229,7 +230,7 @@ export const MobileHomeExperience: React.FC = () => {
       <section className="mx-collection" aria-label="Explore our products">
         <div className="mx-section-header mx-collection-header" data-reveal>
           <div className="mx-section-kicker"><span className="mx-small-line" /> THE COLLECTION</div>
-          <h2 className="mx-editorial-heading">Explore our <em>products.</em></h2>
+          <h2 className="mx-editorial-heading">A world of <em>possibilities.</em></h2>
           <p>Our export and import categories, thoughtfully sourced and ready for global opportunities.</p>
         </div>
         <div className="mx-drag-hint" data-reveal><span>SWIPE TO EXPLORE</span><ArrowRight size={18} /></div>
@@ -280,7 +281,7 @@ export const MobileHomeExperience: React.FC = () => {
       <section className="mx-map-story">
         <div className="mx-section-header" data-reveal>
           <div className="mx-section-kicker"><span className="mx-small-line" /> IN MOTION WORLDWIDE</div>
-          <h2 className="mx-editorial-heading">From origin <em>to destination.</em></h2>
+          <h2 className="mx-editorial-heading">One origin. <em>Infinite reach.</em></h2>
           <p>A connected outlook, with Indian export gateways reaching across regions and continents.</p>
         </div>
         <Link to="/global-trade" className="mx-map-card" data-reveal>
@@ -296,7 +297,7 @@ export const MobileHomeExperience: React.FC = () => {
         <div className="mx-outro-photo"><img src="/images/panels/panel-4-markets.jpg" loading="lazy" alt="" /><span /></div>
         <div className="mx-outro-content" data-reveal>
           <div className="mx-section-kicker mx-section-kicker-light"><span className="mx-small-line" /> MAKE THE CONNECTION</div>
-          <h2>Let’s talk<br /><em>trade.</em></h2>
+          <h2>Great journeys<br /><em>start here.</em></h2>
           <p>Looking to export from India or source internationally? Start with a conversation.</p>
           <Link to="/contact" className="mx-button mx-button-bright mx-outro-button">Start an inquiry <ArrowUpRight size={19} /></Link>
           <span className="mx-outro-foot">PHONIX GLOBAL TRADE · IMPORT & EXPORT</span>

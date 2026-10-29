@@ -104,6 +104,8 @@
   -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
 }
 .mx-home .mx-hero-arrow:active { background: rgba(255,255,255,.3); }
+.mx-home .mx-slide-count { font-size: 12px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: .1em; }
+.mx-home .mx-slide-count span { color: rgba(255,255,255,.5); margin: 0 8px; }
 .mx-home .mx-hero-progress { display: flex; gap: 7px; margin-top: 19px; }
 .mx-home .mx-progress-item { flex: 1; padding: 12px 0; border: 0; background: transparent; position: relative; }
 .mx-home .mx-progress-item::before { content: ''; position: absolute; inset: 10px 0; height: 2px; background: rgba(255,255,255,.4); }

@@ -53,7 +53,7 @@ export const ProductsPage: React.FC = () => {
             </h1>
           </div>
           <p className="editorial-body text-secondary-text max-w-md font-sans text-base leading-relaxed">
-            Explore Indian dehydrated vegetables and fruits, spices, Basmati rice, manufactured goods and international sourcing categories.
+            Certified Indian dehydrated vegetables &amp; fruits, authentic spices, aged Basmati rice, Morbi vitrified architectural tiles, and reciprocal global commodity imports.
           </p>
         </div>
       </section>

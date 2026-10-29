@@ -199,7 +199,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
                     <span className="tracking-widest">PHONIX ARCHIVE CURATION</span>
                   </div>
                   <p className="text-white/80 text-[11px] mt-1 font-sans">
-                    Explore the products and places that inspire our trading network.
+                    Real-time operational photography from verified global logistics nodes.
                   </p>
                 </div>
               </div>
@@ -210,7 +210,7 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
           <div className="border-t border-border-subtle pt-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs font-mono text-secondary-text">
             <div className="flex items-center gap-2">
               <Globe className="w-4 h-4 text-accent" />
-              <span>INDIAN ORIGINS · GLOBAL TRADE</span>
+              <span>HEADQUARTERS: SINGAPORE · ROTTERDAM</span>
             </div>
             <div className="flex items-center gap-2 sm:justify-center">
               <Clock className="w-4 h-4 text-accent-blue" />
@@ -218,9 +218,9 @@ export const FullscreenMenu: React.FC<FullscreenMenuProps> = ({ isOpen, onClose 
             </div>
             <div className="sm:text-right">
               <span className="text-primary-text font-semibold">DIRECT INQUIRY:</span>{' '}
-              <Link to="/contact" onClick={onClose} className="hover:text-accent underline">
+              <a href="mailto:trade@phonix-demo.com" className="hover:text-accent underline">
                 trade@phonix-demo.com
-              </Link>
+              </a>
             </div>
           </div>
         </motion.div>
