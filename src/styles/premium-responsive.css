@@ -209,3 +209,21 @@ a, button, select, input, textarea { touch-action: manipulation; }
   *, *::before, *::after { scroll-behavior: auto !important; }
   .site-inner-page img, .trade-home-cinematic img { transition: none !important; }
 }
+
+/* Keep the brand and menu dark over frosted white, while preserving
+   the blue enquiry button's white text on interior pages. */
+.mobile-site-header[data-header-variant="solid"] a[aria-label="Phonix Global Trade Home"] .font-display,
+.mobile-site-header[data-header-variant="solid"] button[aria-label="Open navigation menu"] {
+  color: #14253e !important;
+}
+@media (max-width: 1023px) {
+  .mobile-site-header[data-header-variant="solid"] a[aria-label="Phonix Global Trade Home"] span,
+  .mobile-site-header[data-header-variant="solid"] a[aria-label="Phonix Global Trade Home"] .font-display {
+    color: #14253e !important;
+  }
+  .mobile-site-header[data-header-variant="solid"] button[aria-label="Open navigation menu"] {
+    color: #143257 !important;
+    background: rgba(255,255,255,.65) !important;
+  }
+  .mobile-site-header[data-header-variant="solid"] a[href="/contact"] { color: white !important; }
+}
