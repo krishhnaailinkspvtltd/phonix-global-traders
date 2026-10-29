@@ -31,6 +31,8 @@ export const Navigation: React.FC = () => {
   // Whether header is in the "Invisible at Top" mode (Home page when not scrolled)
   const isTransparentTop = isHome && !isScrolled
 
+  useEffect(() => { setIsMenuOpen(false) }, [location.pathname, location.search])
+
   return (
     <>
       {/* 
