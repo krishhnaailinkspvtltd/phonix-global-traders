@@ -31,6 +31,8 @@ export const Navigation: React.FC = () => {
   // Whether header is in the "Invisible at Top" mode (Home page when not scrolled)
   const isTransparentTop = isHome && !isScrolled
 
+  useEffect(() => { setIsMenuOpen(false) }, [location.pathname, location.search])
+
   return (
     <>
       {/* 
@@ -39,6 +41,7 @@ export const Navigation: React.FC = () => {
         - Morphs smoothly on scroll into a Water-Effect Glassmorphic Dynamic Island
       */}
       <header
+        data-header-variant={isTransparentTop ? 'overlay' : 'solid'}
         className={`mobile-site-header fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-between ${
           isTransparentTop
             ? 'top-4 sm:top-6 w-[94vw] max-w-7xl py-3 px-4 sm:px-8 bg-transparent shadow-none border-transparent'

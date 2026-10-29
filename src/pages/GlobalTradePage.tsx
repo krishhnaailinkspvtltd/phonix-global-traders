@@ -12,7 +12,7 @@ export const GlobalTradePage: React.FC = () => {
   }, [])
 
   return (
-    <div className="pt-28 sm:pt-32 pb-20 text-primary-text select-none overflow-x-hidden">
+    <div className="site-inner-page pt-28 sm:pt-32 pb-20 text-primary-text select-none overflow-x-hidden">
       
       {/* Editorial Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">

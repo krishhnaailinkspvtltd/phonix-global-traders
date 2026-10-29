@@ -23,7 +23,7 @@ export const GalleryPage: React.FC = () => {
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [selectedPhotoIndex])
+  }, [selectedPhotoIndex, activeFilter])
 
   const categories = ['All', 'Terminals', 'Infrastructure', 'Freight', 'Maritime']
 
@@ -34,18 +34,22 @@ export const GalleryPage: React.FC = () => {
 
   const handleNext = () => {
     if (selectedPhotoIndex === null) return
-    setSelectedPhotoIndex((prev) => ((prev! + 1) % GALLERY_ITEMS.length))
+    const currentIndex = filteredItems.findIndex(item => item.id === GALLERY_ITEMS[selectedPhotoIndex].id)
+    const next = filteredItems[(currentIndex + 1) % filteredItems.length]
+    if (next) setSelectedPhotoIndex(GALLERY_ITEMS.findIndex(item => item.id === next.id))
   }
 
   const handlePrev = () => {
     if (selectedPhotoIndex === null) return
-    setSelectedPhotoIndex((prev) => (prev! - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length)
+    const currentIndex = filteredItems.findIndex(item => item.id === GALLERY_ITEMS[selectedPhotoIndex].id)
+    const previous = filteredItems[(currentIndex - 1 + filteredItems.length) % filteredItems.length]
+    if (previous) setSelectedPhotoIndex(GALLERY_ITEMS.findIndex(item => item.id === previous.id))
   }
 
   const currentPhoto = selectedPhotoIndex !== null ? GALLERY_ITEMS[selectedPhotoIndex] : null
 
   return (
-    <div className="pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
+    <div className="site-inner-page pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Editorial Section Header */}
@@ -87,7 +91,7 @@ export const GalleryPage: React.FC = () => {
                   <button
                     key={cat}
                     type="button"
-                    onClick={() => setActiveFilter(cat)}
+                    onClick={() => { setActiveFilter(cat); setSelectedPhotoIndex(null) }}
                     className={`px-4 py-2 border transition-all duration-200 cursor-pointer text-xs font-mono tracking-wider uppercase flex items-center gap-2 ${
                       activeFilter === cat
                         ? 'bg-primary-text text-canvas border-primary-text shadow-sm'
@@ -147,6 +151,15 @@ export const GalleryPage: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 onClick={() => setSelectedPhotoIndex(originalIndex)}
+                role="button"
+                tabIndex={0}
+                aria-label={'View ' + item.title + ' in fullscreen'}
+                onKeyDown={(event) => {
+                  if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault()
+                    setSelectedPhotoIndex(originalIndex)
+                  }
+                }}
                 onMouseEnter={() => setCursor('EXPAND', 'action')}
                 onMouseLeave={resetCursor}
                 className={`${colSpan} group relative rounded-2xl border border-border-strong bg-surface p-3.5 cursor-pointer transition-all duration-300 hover:border-accent shadow-sm hover:shadow-xl`}
@@ -228,14 +241,14 @@ export const GalleryPage: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-99999 flex flex-col justify-between bg-black/98 text-white p-4 sm:p-8 backdrop-blur-2xl select-none"
+            role="dialog" aria-modal="true" aria-label="Image viewer" className="gallery-lightbox fixed inset-0 z-99999 flex flex-col justify-between bg-black/98 text-white p-4 sm:p-8 backdrop-blur-2xl select-none"
           >
             {/* Modal Top Control Bar */}
             <div className="flex items-center justify-between font-mono text-xs text-white/70 border-b border-white/10 pb-4">
               <div className="flex items-center gap-3">
                 <span className="w-2 h-2 bg-accent inline-block" />
                 <span className="tracking-widest uppercase">
-                  MONOGRAPH DOSSIER — PLATE {(selectedPhotoIndex! + 1).toString().padStart(2, '0')} / {GALLERY_ITEMS.length.toString().padStart(2, '0')}
+                  MONOGRAPH DOSSIER — PLATE {(filteredItems.findIndex(item => item.id === currentPhoto.id) + 1).toString().padStart(2, '0')} / {filteredItems.length.toString().padStart(2, '0')}
                 </span>
                 <span className="text-white/40 hidden sm:inline">|</span>
                 <span className="text-accent hidden sm:inline font-bold uppercase tracking-wider">
@@ -255,7 +268,7 @@ export const GalleryPage: React.FC = () => {
             </div>
 
             {/* Modal Center Viewport */}
-            <div className="relative my-auto flex items-center justify-center w-full max-w-6xl mx-auto h-[70vh]">
+            <div className="gallery-lightbox-viewport relative my-auto flex items-center justify-center w-full max-w-6xl mx-auto h-[70vh]">
               {/* Prev Button */}
               <button
                 type="button"
@@ -267,7 +280,7 @@ export const GalleryPage: React.FC = () => {
               </button>
 
               {/* Main Photo Container */}
-              <div className="max-h-full max-w-full relative flex items-center justify-center border border-white/15 p-2 bg-white/5">
+              <div className="gallery-image-frame max-h-full max-w-full relative flex items-center justify-center border border-white/15 p-2 bg-white/5">
                 <motion.img
                   key={currentPhoto.id}
                   src={currentPhoto.image}

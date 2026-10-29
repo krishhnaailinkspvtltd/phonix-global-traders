@@ -35,7 +35,7 @@ const SCENES: PanelScene[] = [
     subTitle: '& 1121 Basmati.',
     desc: 'Direct farm-gate sourcing of world-renowned Guntur Teja red chilies, high-curcumin Alleppey turmeric, cumin seeds, and aged 1121 steam Basmati rice certified by APEDA and Spices Board of India.',
     image: '/images/products/turmeric-curcumin.jpg',
-    link: '/products?cat=spices',
+    link: '/products?category=spices-commodities',
     linkText: 'VIEW SPICES & GRAINS',
   },
   {
@@ -45,7 +45,7 @@ const SCENES: PanelScene[] = [
     subTitle: 'Vitrified & Eco-Ware.',
     desc: 'Exporting India’s premier manufactured goods: Morbi vitrified architectural porcelain tiles, zero-plastic biodegradable Areca palm leaf dinnerware, and organic combed cotton textiles.',
     image: '/images/products/morbi-tiles.jpg',
-    link: '/products?cat=manufactured',
+    link: '/products?category=manufactured-goods',
     linkText: 'EXPLORE MANUFACTURED',
   },
   {
@@ -55,7 +55,7 @@ const SCENES: PanelScene[] = [
     subTitle: 'Sourcing Worldwide.',
     desc: 'Meeting domestic Indian demand through direct bilateral import of California in-shell almonds, African raw cashew nuts (RCN), Australian yellow lentils, and Middle Eastern petrochemical resins.',
     image: '/images/products/california-almonds.jpg',
-    link: '/products?cat=imports',
+    link: '/products?category=global-imports',
     linkText: 'VIEW IMPORT SOURCING',
   },
   {
@@ -159,10 +159,10 @@ export const StackedTemplatePanels: React.FC = () => {
     <section className="relative bg-[#07162D] text-white select-none">
       
       {/* DESKTOP PINNED FULLSCREEN SCENE TRACK (450vh total height) */}
-      <div ref={containerRef} className="hidden md:block relative h-[450vh]">
+      <div ref={containerRef} className="home-scene-track hidden md:block relative h-[450vh]">
         <div
           ref={pinWrapRef}
-          className="relative w-full h-screen overflow-hidden bg-[#07162D]"
+          className="home-scene-viewport relative w-full h-screen overflow-hidden bg-[#07162D]"
         >
           {SCENES.map((scene, index) => {
             const isFirst = index === 0
@@ -174,7 +174,7 @@ export const StackedTemplatePanels: React.FC = () => {
                   sceneRefs.current[index] = el
                 }}
                 className={`absolute inset-0 w-full h-full overflow-hidden flex flex-col justify-between ${
-                  isFirst ? 'z-10' : `z-${(index + 1) * 10}`
+                  isFirst ? 'home-scene z-10' : `home-scene z-${(index + 1) * 10}`
                 }`}
                 style={{
                   zIndex: (index + 1) * 10,

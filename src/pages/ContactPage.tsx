@@ -72,7 +72,7 @@ export const ContactPage: React.FC = () => {
   }
 
   return (
-    <div className="pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
+    <div className="site-inner-page pt-28 pb-24 text-primary-text select-none overflow-x-hidden min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Architectural Section Header */}
@@ -105,10 +105,10 @@ export const ContactPage: React.FC = () => {
           <div className="mt-8 p-3.5 border border-border-subtle bg-surface flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
             <div className="flex items-center gap-2.5 text-accent">
               <ShieldCheck className="w-4 h-4 shrink-0" />
-              <span className="font-bold tracking-wider uppercase">COMMERCIAL DEMONSTRATION ENVIRONMENT</span>
+              <span className="font-bold tracking-wider uppercase">DEMO INQUIRY — NOT SUBMITTED</span>
             </div>
             <span className="text-secondary-text text-[11px]">
-              Form submissions generate an authenticated simulated broker dossier.
+              Demonstration only: form entries are not sent to an email inbox or CRM.
             </span>
           </div>
         </div>
@@ -316,11 +316,11 @@ export const ContactPage: React.FC = () => {
                 {isSubmitting ? (
                   <>
                     <span className="w-3.5 h-3.5 border-2 border-white border-t-transparent animate-spin" />
-                    <span>ENCRYPTING &amp; DISPATCHING DOSSIER...</span>
+                    <span>PREPARING PREVIEW...</span>
                   </>
                 ) : (
                   <>
-                    <span>TRANSMIT COMMERCIAL DOSSIER</span>
+                    <span>PREVIEW YOUR INQUIRY</span>
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </>
                 )}
@@ -415,7 +415,7 @@ export const ContactPage: React.FC = () => {
                       COMMERCIAL ACKNOWLEDGMENT
                     </span>
                     <h3 className="text-lg font-sans font-bold text-primary-text">
-                      Requisition Dossier Registered
+                      Demonstration Inquiry Preview
                     </h3>
                   </div>
                 </div>
@@ -426,7 +426,7 @@ export const ContactPage: React.FC = () => {
 
               <div className="space-y-3 font-sans text-xs text-secondary-text leading-relaxed">
                 <p>
-                  Thank you, <strong className="text-primary-text">{formData.fullName}</strong>. Your commercial requisition for <strong className="text-primary-text">{formData.companyName}</strong> has been logged into the Phonix Global Trade demonstration desk.
+                  Thank you, <strong className="text-primary-text">{formData.fullName}</strong>. Your commercial requisition for <strong className="text-primary-text">{formData.companyName}</strong> is displayed only in this preview and has not been sent to a trade desk.
                 </p>
                 <div className="p-3 border border-border-subtle bg-canvas font-mono text-[11px] space-y-1">
                   <div><span className="text-secondary-text">DESTINATION PORT:</span> <span className="text-primary-text font-bold">{formData.destinationPort}</span></div>

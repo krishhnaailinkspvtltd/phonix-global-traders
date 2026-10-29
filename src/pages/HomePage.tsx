@@ -28,7 +28,7 @@ export const HomePage: React.FC = () => {
   if (isMobile) return <MobileHomeExperience />
 
   return (
-    <div className="relative overflow-x-clip">
+    <div className="trade-home-cinematic relative overflow-x-clip">
       {/* 1. Fullscreen Cinematic Hero (Phase 4 & 5) */}
       <HeroSection />
 
