@@ -10,6 +10,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   const [isExiting, setIsExiting] = useState(false)
 
   useEffect(() => {
+    const compactScreen = window.matchMedia('(max-width: 1023px)').matches
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReducedMotion) {
       onComplete()
@@ -26,13 +27,13 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         }
         return prev + 1
       })
-    }, 32)
+    }, compactScreen ? 17 : 32)
 
     // Smooth curtain exit at ~3.8s (after 100% is reached and appreciated)
     const exitTimer = setTimeout(() => {
       setIsExiting(true)
-      setTimeout(onComplete, 650)
-    }, 3800)
+      setTimeout(onComplete, compactScreen ? 420 : 650)
+    }, compactScreen ? 1800 : 3800)
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -79,9 +80,9 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
           {/* Top Bar: Clean Minimal Brand Origin & Skip Button */}
           <div className="relative z-10 flex items-center justify-between text-xs font-sans text-white/80">
-            <div className="flex items-center gap-2.5">
+            <div className="flex items-center gap-2.5 min-w-0">
               <span className="w-2 h-2 rounded-full bg-[#66A8FF] animate-pulse" />
-              <span className="font-semibold tracking-widest uppercase text-xs text-white">
+              <span className="font-semibold tracking-wider sm:tracking-widest uppercase text-[9px] sm:text-xs text-white leading-relaxed">
                 PHONIX GLOBAL TRADE // INDIA ⇄ WORLDWIDE
               </span>
             </div>
@@ -92,7 +93,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 setIsExiting(true)
                 setTimeout(onComplete, 100)
               }}
-              className="text-xs text-white/70 hover:text-white transition-colors font-medium tracking-wider uppercase cursor-pointer px-3 py-1 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-xs"
+              className="shrink-0 text-[10px] sm:text-xs text-white/70 hover:text-white transition-colors font-medium tracking-wider uppercase cursor-pointer px-2 sm:px-3 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-xs"
             >
               Skip [ESC]
             </button>
@@ -102,7 +103,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           <div className="relative z-10 max-w-5xl mx-auto w-full my-auto flex flex-col items-center justify-center text-center">
             
             {/* Big Monumental Staggered Letters Assembling the Brand Identity */}
-            <div className="flex items-center justify-center gap-2 sm:gap-4 md:gap-7 overflow-hidden py-4">
+            <div className="flex items-center justify-center gap-0.5 sm:gap-4 md:gap-7 overflow-hidden py-4">
               {letters.map((char, index) => (
                 <motion.span
                   key={index}
@@ -113,7 +114,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                     delay: index * 0.14,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className="font-display font-black text-6xl sm:text-8xl md:text-9xl lg:text-[10.5rem] tracking-tight text-white select-none drop-shadow-[0_16px_36px_rgba(0,0,0,0.65)]"
+                  className="font-display font-black text-[clamp(2.4rem,11.5vw,3.8rem)] sm:text-8xl md:text-9xl lg:text-[10.5rem] tracking-tight text-white select-none drop-shadow-[0_16px_36px_rgba(0,0,0,0.65)]"
                 >
                   {char}
                 </motion.span>
@@ -131,7 +132,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               }}
               className="mt-4 sm:mt-6 space-y-2 text-center"
             >
-              <span className="font-display font-bold text-xs sm:text-base tracking-[0.45em] text-[#66A8FF] uppercase block">
+              <span className="font-display font-bold text-xs sm:text-base tracking-[0.18em] sm:tracking-[0.45em] text-[#66A8FF] uppercase block">
                 GLOBAL TRADE // EXPORT &amp; IMPORT
               </span>
               <p className="font-editorial italic text-white/80 text-xs sm:text-base max-w-lg mx-auto">
