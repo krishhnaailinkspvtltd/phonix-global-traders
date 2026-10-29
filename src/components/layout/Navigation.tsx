@@ -5,9 +5,9 @@ import { FullscreenMenu } from '@/components/layout/FullscreenMenu'
 
 const NAV_LINKS = [
   { label: 'Products', path: '/products' },
-  { label: 'Spices & Agro', path: '/products?cat=spices' },
-  { label: 'Manufacturing', path: '/products?cat=manufactured' },
-  { label: 'Imports', path: '/products?cat=imports' },
+  { label: 'Spices & Agro', path: '/products?category=spices-commodities' },
+  { label: 'Manufacturing', path: '/products?category=manufactured-goods' },
+  { label: 'Imports', path: '/products?category=global-imports' },
   { label: 'Trade Routes', path: '/global-trade' },
   { label: 'About', path: '/about' },
 ]
@@ -39,7 +39,7 @@ export const Navigation: React.FC = () => {
         - Morphs smoothly on scroll into a Water-Effect Glassmorphic Dynamic Island
       */}
       <header
-        className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-between ${
+        className={`mobile-site-header fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] flex items-center justify-between ${
           isTransparentTop
             ? 'top-4 sm:top-6 w-[94vw] max-w-7xl py-3 px-4 sm:px-8 bg-transparent shadow-none border-transparent'
             : 'top-3 sm:top-4 w-[92vw] max-w-4xl py-2 px-4 sm:px-6 water-glass-island rounded-full overflow-hidden'
@@ -95,7 +95,7 @@ export const Navigation: React.FC = () => {
         {/* Center: Clean Minimalist Navigation Options (No Clutter, Pure Options) */}
         <nav className="relative z-10 hidden lg:flex items-center space-x-1 font-sans text-sm font-medium">
           {NAV_LINKS.map((link) => {
-            const isActive = location.pathname === link.path
+            const isActive = (location.pathname + location.search) === link.path
             return (
               <Link
                 key={link.path}
@@ -135,7 +135,7 @@ export const Navigation: React.FC = () => {
           <button
             type="button"
             onClick={() => setIsMenuOpen(true)}
-            aria-label="Open Navigation Menu"
+            aria-label="Open navigation menu" aria-expanded={isMenuOpen} aria-haspopup="dialog"
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-sans font-medium transition-all duration-300 cursor-pointer hover:scale-105 active:scale-95 ${
               isTransparentTop
                 ? 'bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white drop-shadow-sm'
