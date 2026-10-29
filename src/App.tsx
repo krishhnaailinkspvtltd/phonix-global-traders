@@ -31,7 +31,9 @@ export default function App() {
   useEffect(() => {
     // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) return
+    // Touch devices use native scrolling: no wheel smoothing, no touch blocking.
+    const touchViewport = window.matchMedia('(max-width: 1023px), (pointer: coarse)').matches
+    if (prefersReducedMotion || touchViewport) return
 
     const lenis = new Lenis({
       duration: 1.1,
@@ -42,12 +44,13 @@ export default function App() {
       wheelMultiplier: 0.9,
     })
 
+    let rafId = 0
     function raf(time: number) {
       lenis.raf(time)
-      requestAnimationFrame(raf)
+      rafId = requestAnimationFrame(raf)
     }
 
-    const rafId = requestAnimationFrame(raf)
+    rafId = requestAnimationFrame(raf)
 
     return () => {
       cancelAnimationFrame(rafId)
